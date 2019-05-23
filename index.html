@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Random Password Generator</title>
+        <script type='text/javascript' src='RandomPassword.js'></script>
+    </head>
+    <body>
+        <button onclick="GenerateRandomPassword()">Generate Password</button><br>
+        <p>
+            <label>Random Password</label>
+            <input type = "text" id = "RandomPassword" size = "128"/>
+        </p>
+        <button id="copyPasswordButton" onclick="copyPassword()">Copy to Clipboard</button>
+        <p>
+            <label>Minimum Number of Characters</label>
+            <input type = "number" id = "minLengthOfPassword" value = "15"/>
+        </p>
+        <p>
+            <label>Maximum Number of Characters</label>
+            <input type = "number" id = "maxLengthOfPassword" value = "15"/>
+        </p>
+        <input type="checkbox" id="RUL">Requires an Uppercase Letter<br>
+        <input type="checkbox" id="NUL">Cannot Accept Uppercase Letters<br>
+        <input type="checkbox" id="RLL">Requires Lowercase Letter<br>
+        <input type="checkbox" id="NLL">Cannot Accept Lowercase Letters<br>
+        <input type="checkbox" id="RN">Requires a Number<br>
+        <input type="checkbox" id="NN">Cannot Accept Numbers<br>
+        <input type="checkbox" id="RS">Requires a Symbol<br>
+        <input type="checkbox" id="NS">Cannot Accept Symbols<br>
+        <script>
+            function copyPassword() {
+                document.getElementById("RandomPassword").select();
+                document.execCommand("copy");
+            }
+        </script>
+    </body>
+</html>
