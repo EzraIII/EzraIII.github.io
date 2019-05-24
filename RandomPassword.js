@@ -12,7 +12,7 @@ const arrayOfNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const arrayOfSymbols = ["@", "%", "+", "/", "!", "#", "$", "^", "?", ",", "^", "?", ",", "(", ")", "{", "}", "[", "]", "~", "-", "_", "."];
 
 function GenerateRandomPassword() {
-    if(initialized == false) {
+/*    if(initialized == false) {
         const minLengthOfPassword = document.getElementById("minLengthOfPassword");
         const maxLengthOfPassword = document.getElementById("maxLengthOfPassword");
         const randomPasswordTextField = document.getElementById("RandomPassword");
@@ -25,11 +25,11 @@ function GenerateRandomPassword() {
         const checkboxRS = document.getElementById("RS");
         const checkboxNS = document.getElementById("NS");
         initialized = true;
-    }
-    spotForLL = null;
-    spotForUL = null;
-    spotForNu = null;
-    spotForSy = null;
+    }*/
+    spotForLL = undefined;
+    spotForUL = undefined;
+    spotForNu = undefined;
+    spotForSy = undefined;
     if(document.getElementById("minLengthOfPassword").value > 0) minLength = Math.ceil(document.getElementById("minLengthOfPassword").value);
     if(document.getElementById("maxLengthOfPassword").value > 0) maxLength = Math.ceil(document.getElementById("maxLengthOfPassword").value);
     arrayOfCharacters = [];
@@ -71,6 +71,8 @@ function GenerateRandomPassword() {
         password += character;
     }
     document.getElementById("RandomPassword").value = password;
+    console.log(passwordLength);
+    console.log(spotForUL + " " + spotForLL + " " + spotForNu + " " + spotForSy)
 }
 
 function addLowercaseLetters(){
@@ -99,7 +101,6 @@ function addSymbols(){
 
 /*function copyPassword(){
     var thePassword = document.getElementById("copyPasswordButton");
-    thePassword.focus();
-//    thePassword.select();
-//    document.execCommand("copy");
+    thePassword.select();
+    document.execCommand("copy");
 }*/
