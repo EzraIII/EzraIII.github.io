@@ -30,7 +30,7 @@ function GenerateRandomPassword() {
     spotForUL = undefined;
     spotForNu = undefined;
     spotForSy = undefined;
-    if(document.getElementById("lengthOfPassword").value > 0) passwordLength = Math.ceil(document.getElementById("minLengthOfPassword").value);
+    if(document.getElementById("lengthOfPassword").value > 0) passwordLength = Math.ceil(document.getElementById("lengthOfPassword").value);
     arrayOfCharacters = [];
     if(document.getElementById("RUL").checked) addUppercaseLetters();
     if(document.getElementById("RLL").checked) addLowercaseLetters();
