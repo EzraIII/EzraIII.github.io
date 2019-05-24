@@ -30,15 +30,13 @@ function GenerateRandomPassword() {
     spotForUL = undefined;
     spotForNu = undefined;
     spotForSy = undefined;
-    if(document.getElementById("minLengthOfPassword").value > 0) minLength = Math.ceil(document.getElementById("minLengthOfPassword").value);
-    if(document.getElementById("maxLengthOfPassword").value > 0) maxLength = Math.ceil(document.getElementById("maxLengthOfPassword").value);
+    if(document.getElementById("lengthOfPassword").value > 0) passwordLength = Math.ceil(document.getElementById("minLengthOfPassword").value);
     arrayOfCharacters = [];
-    if(!document.getElementById("NUL").checked) addUppercaseLetters();
-    if(!document.getElementById("NLL").checked) addLowercaseLetters();
-    if(!document.getElementById("NN").checked) addNumbers();
-    if(!document.getElementById("NS").checked) addSymbols();
+    if(document.getElementById("RUL").checked) addUppercaseLetters();
+    if(document.getElementById("RLL").checked) addLowercaseLetters();
+    if(document.getElementById("RN").checked) addNumbers();
+    if(document.getElementById("RS").checked) addSymbols();
     password = "";
-    passwordLength = Math.floor(Math.random()*(maxLength-minLength+1)+minLength);
     var charactersUnclaimed = passwordLength;
     if(document.getElementById("RUL").checked) {
         spotForUL = Math.floor(Math.random()*charactersUnclaimed);
@@ -98,9 +96,3 @@ function addSymbols(){
         arrayOfCharacters.push(arrayOfSymbols[i]);
     }
 }
-
-/*function copyPassword(){
-    var thePassword = document.getElementById("copyPasswordButton");
-    thePassword.select();
-    document.execCommand("copy");
-}*/
