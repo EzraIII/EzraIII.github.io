@@ -54,8 +54,6 @@ function GenerateRandomPassword() {
         password += character;
     }
     textboxRandomPassword.value = password;
-    console.log(passwordLength);
-    console.log(spotForUL + " " + spotForLL + " " + spotForNu + " " + spotForSy)
 }
 
 function addLowercaseLetters(){
