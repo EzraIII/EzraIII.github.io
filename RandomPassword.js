@@ -99,16 +99,6 @@ function addSymbols(){
     }
 }
 
-function iosCopyToClipboard(){
-    var range = document.createRange();
-    range.selectNodeContents(document.getElementById("RandomPassword"));
-    var k = window.getSelection();
-    k.removeAllRanges();
-    k.addRange(range);
-    document.getElementById("RandomPassword").setSelectionRange(0, 9999999999999999999999999999999999999999999999999999999);
-    document.execCommand("copy");
-}
-
 /*function copyPassword(){
     var thePassword = document.getElementById("copyPasswordButton");
     thePassword.select();
