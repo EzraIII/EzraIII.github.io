@@ -3,7 +3,6 @@
 var password = "";
 var passwordLength, arrayOfCharacters, spotForUL, spotForLL, spotForNu, spotForSy, theArrayToUse;
 var character = "Error";
-var initialized = false;
 var minLength = 15;
 var maxLength = 15;
 const arrayOfLowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -12,48 +11,34 @@ const arrayOfNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const arrayOfSymbols = ["@", "%", "+", "/", "!", "#", "$", "^", "?", ",", "^", "?", ",", "(", ")", "{", "}", "[", "]", "~", "-", "_", "."];
 
 function GenerateRandomPassword() {
-/*    if(initialized == false) {
-        const minLengthOfPassword = document.getElementById("minLengthOfPassword");
-        const maxLengthOfPassword = document.getElementById("maxLengthOfPassword");
-        const randomPasswordTextField = document.getElementById("RandomPassword");
-        const checkboxRUL = document.getElementById("RUL");
-        const checkboxNUL = document.getElementById("NUL");
-        const checkboxRLL = document.getElementById("RLL");
-        const checkboxNLL = document.getElementById("NLL");
-        const checkboxRN = document.getElementById("RN");
-        const checkboxNN = document.getElementById("NN");
-        const checkboxRS = document.getElementById("RS");
-        const checkboxNS = document.getElementById("NS");
-        initialized = true;
-    }*/
     spotForLL = undefined;
     spotForUL = undefined;
     spotForNu = undefined;
     spotForSy = undefined;
-    if(document.getElementById("lengthOfPassword").value > 0) passwordLength = Math.ceil(document.getElementById("lengthOfPassword").value);
+    if(textboxLengthOfPassword.value > 0) passwordLength = Math.ceil(document.getElementById("lengthOfPassword").value);
     arrayOfCharacters = [];
-    if(document.getElementById("RUL").checked) addUppercaseLetters();
-    if(document.getElementById("RLL").checked) addLowercaseLetters();
-    if(document.getElementById("RN").checked) addNumbers();
-    if(document.getElementById("RS").checked) addSymbols();
+    if(checkboxRUL.checked) addUppercaseLetters();
+    if(checkboxRLL.checked) addLowercaseLetters();
+    if(checkboxRN.checked) addNumbers();
+    if(checkboxRS.checked) addSymbols();
     password = "";
     var charactersUnclaimed = passwordLength;
-    if(document.getElementById("RUL").checked) {
+    if(checkboxRUL.checked) {
         spotForUL = Math.floor(Math.random()*charactersUnclaimed);
         charactersUnclaimed--;
     }
-    if(document.getElementById("RLL").checked) {
+    if(checkboxRLL.checked) {
         spotForLL = Math.floor(Math.random()*charactersUnclaimed);
         if(spotForLL >= spotForUL) spotForLL++;
         charactersUnclaimed--;
     }
-    if(document.getElementById("RN").checked) {
+    if(checkboxRN.checked) {
         spotForNu = Math.floor(Math.random()*charactersUnclaimed);
         if(spotForNu >= spotForUL || spotForNu >= spotForLL) spotForNu++;
         if(spotForNu >= spotForUL && spotForNu >= spotForLL) spotForNu++;
         charactersUnclaimed--;
     }
-    if(document.getElementById("RS").checked) {
+    if(checkboxRS.checked) {
         spotForSy = Math.floor(Math.random()*charactersUnclaimed);
         if(spotForSy >= spotForUL || spotForSy >= spotForLL || spotForSy >= spotForNu) spotForSy++;
         if(spotForSy >= spotForUL && (spotForSy >= spotForLL || spotForSy >= spotForNu) || (spotForSy >= spotForLL && spotForSy >= spotForNu)) spotForSy++;
