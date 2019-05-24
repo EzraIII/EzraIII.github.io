@@ -53,7 +53,7 @@ function GenerateRandomPassword() {
         character = theArrayToUse[Math.floor(Math.random()*theArrayToUse.length)];
         password += character;
     }
-    document.getElementById("RandomPassword").value = password;
+    textboxRandomPassword.value = password;
     console.log(passwordLength);
     console.log(spotForUL + " " + spotForLL + " " + spotForNu + " " + spotForSy)
 }

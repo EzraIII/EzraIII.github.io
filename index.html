@@ -20,12 +20,6 @@
         <input type="checkbox" id="RLL" checked>Includes Lowercase Letters<br>
         <input type="checkbox" id="RN" checked>Includes Numbers<br>
         <input type="checkbox" id="RS" checked>Includes Symbols<br>
-        <script>
-            function copyPassword() {
-                document.getElementById("RandomPassword").select();
-                document.execCommand("copy");
-            }
-        </script>
         <script type='text/javascript'>
             const textboxLengthOfPassword = document.getElementById("lengthOfPassword");
             const textboxRandomPassword = document.getElementById("RandomPassword");
@@ -33,6 +27,13 @@
             const checkboxRLL = document.getElementById("RLL");
             const checkboxRN = document.getElementById("RN");
             const checkboxRS = document.getElementById("RS");
+        </script>
+        <script>
+            var range
+            function copyPassword() {
+                textboxRandomPassword.select();
+                document.execCommand("copy");
+            }
         </script>
     </body>
 </html>
