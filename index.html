@@ -30,18 +30,18 @@
             const checkboxRS = document.getElementById("RS");
         </script>
         <script>
-            var range
+            var range;
             function copyPassword() {
                 textboxRandomPassword.select();
                 document.execCommand("copy");
             }
             function copyPasswordMobile() {
                 range = document.createRange();
-                range.selectNodeContents(textBoxRandomPassword);
+                range.selectNodeContents(textboxRandomPassword);
                 selection = window.getSelection();
                 selection.removeAllRanges();
                 selection.addRange(range);
-                textBoxRandomPassword.setSelectionRange(0, 9999999);
+                textboxRandomPassword.setSelectionRange(0, 999999);
             }
         </script>
     </body>
