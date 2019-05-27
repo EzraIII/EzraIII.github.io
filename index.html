@@ -11,7 +11,8 @@
             <label>Random Password</label>
             <input type = "text" id = "RandomPassword" size = "128"/>
         </p>
-        <button id="copyPasswordButton" onclick="copyPassword()">Copy to Clipboard</button>
+        <button id="copyPasswordButton" onclick="copyPassword()"><img src="Clipboard.png">Computer</button>
+        <button id="copyPasswordButton" onclick="copyPasswordMobile()"><img src="Clipboard.png">Mobile Device</button>
         <p>
             <label>Number of Characters</label>
             <input type = "number" id = "lengthOfPassword" value = "15"/>
@@ -33,6 +34,14 @@
             function copyPassword() {
                 textboxRandomPassword.select();
                 document.execCommand("copy");
+            }
+            function copyPasswordMobile() {
+                range = document.createRange();
+                range.selectNodeContents(textBoxRandomPassword);
+                selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+                textArea.setSelectionRange(0, 999999);
             }
         </script>
     </body>
