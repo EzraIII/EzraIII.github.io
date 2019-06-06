@@ -8,14 +8,14 @@ var maxLength = 15;
 const arrayOfLowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 const arrayOfUppercaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const arrayOfNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-const arrayOfSymbols = ["@", "%", "+", "/", "!", "#", "$", "^", "?", ",", "^", "?", ",", "(", ")", "{", "}", "[", "]", "~", "-", "_", "."];
+const arrayOfSymbols = ["+", "/", "!", "#", "$", "^", "?", ",", "^", "?", ",", "(", ")", "{", "}", "[", "]", "~", "-", "_", "."];
 
 function GenerateRandomPassword() {
     spotForLL = undefined;
     spotForUL = undefined;
     spotForNu = undefined;
     spotForSy = undefined;
-    if(textboxLengthOfPassword.value > 0) passwordLength = Math.ceil(document.getElementById("lengthOfPassword").value);
+    if(textboxLengthOfPassword.value > 0) passwordLength = Math.ceil(textboxLengthOfPassword.value);
     arrayOfCharacters = [];
     if(checkboxRUL.checked) addUppercaseLetters();
     if(checkboxRLL.checked) addLowercaseLetters();
@@ -77,5 +77,13 @@ function addNumbers(){
 function addSymbols(){
     for(var i = 0; i < arrayOfSymbols.length; i++){
         arrayOfCharacters.push(arrayOfSymbols[i]);
+    }
+}
+
+function copyPasswordBasedOnDevice() {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        copyPasswordMobile();
+    } else {
+        copyPassword();
     }
 }
